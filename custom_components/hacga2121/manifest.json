@@ -1,0 +1,14 @@
+{
+  "domain": "cga2121",
+  "name": "Cga2121",
+  "documentation": "https://github.com/drolano/cga2121",
+  "requirements": ["Cga2121==1.0"],
+  "dependencies": [],
+  "codeowners": [
+    "@drolano"
+  ],
+  "iot_class": "local_polling",
+  "config_flow": true,
+  "version": "1.0.0",
+  "issue_tracker": "https://github.com/drolano/cga2121/issues"
+}
