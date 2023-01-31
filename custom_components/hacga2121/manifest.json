@@ -1,5 +1,5 @@
 {
-  "domain": "cga2121",
+  "domain": "hacga2121",
   "name": "Cga2121",
   "documentation": "https://github.com/drolano/cga2121",
   "requirements": ["Cga2121==1.0"],
