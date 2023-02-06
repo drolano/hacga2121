@@ -96,7 +96,7 @@ class TechnicolorDeviceScanner(ScannerEntity):
         _LOGGER.info(f"updating state for ${self._mac} with ip ${self._device['ip']}")
         self._active = self._device['ip'] is not None and self._device['ip'] != ""
         _LOGGER.info(f"no es none ${self._device['ip'] is not None}")
-        _LOGGER.info(f"distinto de comillas comillas ${self._device['ip'] != \"\"}")
+        _LOGGER.info("distinto de comillas comillas ${self._device['ip'] != \"\"}")
         _LOGGER.info(f"the state is ${self._active}")
         
     @property
