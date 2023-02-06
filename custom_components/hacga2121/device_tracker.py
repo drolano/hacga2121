@@ -92,6 +92,7 @@ class TechnicolorDeviceScanner(ScannerEntity):
     def async_update_state(self) -> None:
         """Update the Technicolor device."""
         device = self._router.devices[self._mac]
+        _LOGGER.info(f"info del device ${device}")
         self._device['ip'] = device['ip']
         _LOGGER.info(f"updating state for ${self._mac} with ip ${self._device['ip']}")
         self._active = self._device['ip'] is not None and self._device['ip'] != ""
