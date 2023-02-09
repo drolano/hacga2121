@@ -93,7 +93,6 @@ class TechnicolorDeviceScanner(ScannerEntity):
         """Update the Technicolor device."""
         device = self._router.devices[self._mac]
         _LOGGER.info(f"info del device ${device}")
-        _LOGGER.info(f" lo que busco ${self._router._devices}")
         self._device['ip'] = device['ip']
         _LOGGER.info(f"updating state for ${self._mac} with ip ${self._device['ip']}")
         self._active = self._device['ip'] is not None and self._device['ip'] != ""
