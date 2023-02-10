@@ -97,6 +97,7 @@ class TechnicolorDeviceScanner(ScannerEntity):
         _LOGGER.info(f"updating state for ${self._mac} with ip ${self._device['ip']}")
         self._active = self._device['ip'] is not None and self._device['ip'] != ""
         _LOGGER.info(f"activo: {self._active}")
+        
     @property
     def unique_id(self) -> str:
         """Return a unique ID."""
