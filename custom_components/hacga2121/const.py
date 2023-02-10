@@ -1,2 +1,2 @@
 """Technicolor component constants."""
-DOMAIN = "cga2121"
+DOMAIN = "hacga2121"
