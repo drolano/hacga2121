@@ -2,7 +2,7 @@
   "domain": "hacga2121",
   "name": "Cga2121",
   "documentation": "https://github.com/drolano/hacga2121",
-  "requirements": ["Cga2121==1.5"],
+  "requirements": ["Cga2121==1.6"],
   "dependencies": [],
   "codeowners": [
     "@drolano"
