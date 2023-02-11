@@ -62,7 +62,7 @@ class TechnicolorRouter:
         _LOGGER.info(f"update_device_trackers devices ${devices}")
 
         for device in devices:
-            device_mac = device["mac"].upper()
+            device_mac = device["mac"]
             _LOGGER.info(f"device: {device_mac}")
             if self.devices.get(device_mac) is None:
                 new_device = True
