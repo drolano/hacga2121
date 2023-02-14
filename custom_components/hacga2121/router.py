@@ -52,21 +52,21 @@ class TechnicolorRouter:
 
     async def update_all(self, now) -> None:
         """Update all Technicolor platforms."""
-        _LOGGER.info("update_all")
+        """_LOGGER.info("update_all")"""
         await self.update_device_trackers()
 
     async def update_device_trackers(self) -> None:
-        _LOGGER.info("update_device_trackers")
+        """_LOGGER.info("update_device_trackers")"""
         new_device = None
         devices = await self.hass.async_add_executor_job(self._api.get_device_modal)
-        _LOGGER.info(f"update_device_trackers devices ${devices}")
+        """_LOGGER.info(f"update_device_trackers devices ${devices}")"""
 
         for device in devices:
             device_mac = device["mac"]
-            _LOGGER.info(f"device: {device_mac}")
+            """_LOGGER.info(f"device: {device_mac}")"""
             if self.devices.get(device_mac) is None:
                 new_device = True
-                _LOGGER.info("new")
+                """_LOGGER.info("new")"""
 
             self.devices[device_mac] = device
 
