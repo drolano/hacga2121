@@ -63,7 +63,7 @@ async def async_setup_entry(
 @callback
 def add_entities(router, async_add_entities, tracked):
     """Add new tracker entities from the gateway."""
-    _LOGGER.info(f"add_entities tracked ${tracked}")
+    """_LOGGER.info(f"add_entities tracked ${tracked}")"""
     new_tracked = []
 
     for mac, device in router.devices.items():
@@ -72,7 +72,7 @@ def add_entities(router, async_add_entities, tracked):
 
         new_tracked.append(TechnicolorDeviceScanner(router, device))
         tracked.add(mac)
-        _LOGGER.info(f"add_entities {mac}")
+        """_LOGGER.info(f"add_entities {mac}")"""
 
     if new_tracked:
         async_add_entities(new_tracked, True)
@@ -92,11 +92,11 @@ class TechnicolorDeviceScanner(ScannerEntity):
     def async_update_state(self) -> None:
         """Update the Technicolor device."""
         device = self._router.devices[self._mac]
-        _LOGGER.info(f"info del device ${device}")
+        """_LOGGER.info(f"info del device ${device}")"""
         self._device['ip'] = device['ip']
-        _LOGGER.info(f"updating state for ${self._mac} with ip ${self._device['ip']}")
+        """_LOGGER.info(f"updating state for ${self._mac} with ip ${self._device['ip']}")"""
         self._active = self._device['ip'] is not None and self._device['ip'] != ""
-        _LOGGER.info(f"activo: ${self._active}")
+        """_LOGGER.info(f"activo: ${self._active}")"""
         
     @property
     def unique_id(self) -> str:
@@ -151,13 +151,13 @@ class TechnicolorDeviceScanner(ScannerEntity):
     @callback
     def async_on_demand_update(self):
         """Update state."""
-        _LOGGER.info("in async_on_demand_update")
+        """_LOGGER.info("in async_on_demand_update")"""
         self.async_update_state()
         self.async_write_ha_state()
 
     async def async_added_to_hass(self):
         """Register state update callback."""
-        _LOGGER.info("in async_added_to_hass")
+        """_LOGGER.info("in async_added_to_hass")"""
         self.async_update_state()
         self.async_on_remove(
             async_dispatcher_connect(
